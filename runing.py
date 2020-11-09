@@ -1,5 +1,7 @@
 from PyQt5 import QtCore
 import youtube_dl
+
+import time
 from PySide2 import QtWidgets
 
 
@@ -9,6 +11,9 @@ class Run(QtCore.QThread):
     def run(self):
         print('Начал')
         self.mysignal.emit('Процесс скачивания запущен!')
+
+        for i in range(1000):
+            pass
 
         with youtube_dl.YoutubeDL({}) as ydl:
             print('Все супер')
